@@ -1,16 +1,28 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import React from "react";
+import { useNavigate } from "react-router-dom";
 
 function Bienvenida() {
   const navigate = useNavigate();
 
+  const irAFiltros = () => {
+    navigate("/filtros");
+  };
+
   return (
-    <div className="h-screen flex flex-col items-center justify-center bg-blue-100">
-      <h1 className="text-4xl font-bold text-gray-800 mb-4">Holi amorcito</h1>
-      <p className="text-xl text-gray-700 mb-6">TE AMO MUCHO</p>
+    <div
+      className="bienvenida-container"
+      style={{ textAlign: "center", marginTop: "20vh" }}
+    >
+      <h1>Bienvenido al Selector de Entretenimiento</h1>
       <button
-        onClick={() => navigate('/filtros')}
-        className="px-6 py-3 bg-blue-500 text-white rounded hover:bg-blue-600 transition duration-300"
+        onClick={irAFiltros}
+        className="boton-iniciar"
+        style={{
+          marginTop: "20px",
+          fontSize: "20px",
+          padding: "10px 20px",
+          cursor: "pointer",
+        }}
       >
         Comenzar
       </button>
